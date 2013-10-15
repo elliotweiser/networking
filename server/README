@@ -13,8 +13,9 @@ DESCRIPTION:
     This program implements a web server that includes the following features:
         - A thread pool, which provides load balancing, and doesn't hog CPU
           time for threads with no work.  The number of threads in the pool
-          depends on the number of cores in the machine.  The command `nproc'
-          must exist in the PATH environment variable
+          depends on the number of cores in the machine.  If the `nproc'
+          command does not exist in the PATH environment variable, then the 
+          program will default to creating four worker threads.
         - Limited HTTP support
               * Protocols: 1.0, 1.1
               * Errors: 400, 403, 404, 408, 413, 500, 501
